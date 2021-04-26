@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <title>ML API</title>
+ <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+ <div class="login">
+    <h1>Previsão de cliente churn</h1>
+
+    <form action="{{ url_for('predict')}}"method="post">
+        <input type="text" name="Gênero do Cliente" placeholder="Gênero do Cliente" required="required" />
+        <input type="text" name="Cliente Aposentado" placeholder="Cliente Aposentado" required="required" />
+        <input type="text" name="Cliente Casado" placeholder="Cliente Casado" required="required" />
+        <input type="text" name="Tempo como cliente" placeholder="Tempo como cliente" required="required" />
+        <input type="text" name="Possui Serviço Telefônico" placeholder="Possui Serviço Telefônico" required="required" />
+        <input type="text" name="Possui Múltiplas Linhas" placeholder="Possui Múltiplas Linhas" required="required" />
+        <input type="text" name="Possui Serviço de Internet" placeholder="Possui Serviço de Internet" required="required" />
+        <input type="text" name="Possui Seguro Online" placeholder="Possui Seguro Online" required="required" />
+        <input type="text" name="Possui Backup Online" placeholder="Possui Seguro Online" required="required" />
+        <input type="text" name="Possui Proteção de Celular" placeholder="Possui Proteção de Celular" required="required" />
+        <input type="text" name="Possui Suporte Técnico" placeholder="Possui Suporte Técnico" required="required" />
+        <input type="text" name="Possui Streaming de TV" placeholder="Possui Streaming de TV" required="required" />
+        <input type="text" name="Possui Streaming de Filmes" placeholder="Possui Streaming de Filmes" required="required" />
+        <input type="text" name="Qual a Duração do Contrato" placeholder="Qual a Duração do Contrato" required="required" />
+        <input type="text" name="Fatura por Papel" placeholder="Fatura por Papel" required="required" />
+        <input type="text" name="Método de Pagamento" placeholder="Método de Pagamento" required="required" />
+        <input type="text" name="Pagamento Mensal" placeholder="Pagamento Mensal" required="required" />
+        <input type="text" name="Pagamento Total" placeholder="Pagamento Total" required="required" />
+
+        <button type="submit">Calcular!</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
